@@ -1,2 +1,5 @@
 [default.general]
 chip = "stm32f103c8"
+
+[with_rtt.rtt]
+enabled = true
