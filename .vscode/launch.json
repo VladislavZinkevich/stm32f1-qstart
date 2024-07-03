@@ -1,0 +1,39 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "preLaunchTask": "Build",
+        "type": "probe-rs-debug",
+        "request": "launch",
+        "name": "probe_rs Executable launch example",
+        "cwd": "${workspaceFolder}",
+        "runtimeExecutable": "probe-rs",
+        "runtimeArgs": ["dap-server"],
+        "chip": "STM32F103C8",
+        "flashingConfig": {
+          "flashingEnabled": true,
+          "haltAfterReset": false,
+          "formatOptions": {
+            //!MODIFY (or remove). Valid values are: 'bin', 'hex', 'elf'(default), 'idf'
+            "binaryFormat": "elf"
+          }
+        },
+        "coreConfigs": [
+          {
+            "coreIndex": 0,
+            //!MODIFY
+            "programBinary": "${workspaceFolder}\\target\\thumbv7m-none-eabi\\debug\\main",
+            //!MODIFY
+            "svdFile": "${workspaceFolder}\\STM32F103.svd"
+          }
+        ],
+        "env": {
+          //!MODIFY (or remove)
+          // If you set this variable, check the VSCode console log window for the location of the log file.
+          "RUST_LOG": "info"
+        },
+         // Info, Debug
+        "consoleLogLevel": "Console"
+      }
+    ]
+  }
