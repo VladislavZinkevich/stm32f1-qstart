@@ -3,6 +3,7 @@
 
 use cortex_m_rt::entry;
 use core::panic::PanicInfo;
+use stm32f1::stm32f103 as pac;
 
 #[entry]
 fn main() -> ! {
