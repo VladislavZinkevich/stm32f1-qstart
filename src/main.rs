@@ -2,7 +2,7 @@
 #![no_main]
 
 use cortex_m_rt::entry;
-use panic_halt as _;
+use core::panic::PanicInfo;
 
 #[entry]
 fn main() -> ! {
@@ -10,3 +10,10 @@ fn main() -> ! {
         
     }
 }
+
+#[inline(never)]
+#[panic_handler]
+fn panic(info: &PanicInfo) -> ! {
+    loop {}
+}
+
