@@ -7,10 +7,6 @@ edition = "2021"
 cortex-m = { version = "0.7.7", features = ["critical-section-single-core", "inline-asm"] }
 rtt-target = "0.5.0"
 cortex-m-rt = "0.7.3"
-[dependencies.stm32f1]
-version = "0.15.1"
-features = ["stm32f103"]
-
 
 [[bin]]
 name = "main"
